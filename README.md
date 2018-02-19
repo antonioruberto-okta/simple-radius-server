@@ -1,3 +1,5 @@
+# simple-radius-server
+
 Simple TOTP RADIUS Server for node.js.
 
 ## Installation
@@ -12,8 +14,8 @@ This app provides a simple RADIUS server for testing an OTP RADIUS client with e
 
 You can specify a static username and password to validate an `Access-Request`.  If the `User-Name` and `User-Password` doesn't match the static values the server will respond with an `Access-Reject` message.
 
-	node app.js --secret {RADIUS secret} --username {UserName} --password {Password}
+	node app.mjs --secret {RADIUS secret} --username {UserName} --password {Password}
 
-If you want to validate an `Access-Request` with a computed TOTP, you must opt-in to TOTP mode and specify the base32-encoded TOTP shared secret as the password 
+If you want to validate an `Access-Request` with a computed TOTP, you must opt-in to TOTP mode and specify the base32-encoded TOTP shared secret as the password
 
-	node app.js --secret {RADIUS secret} --username {UserName} --password {base32-encoded TOTP shared secret} --totp true
+	node app.mjs --secret {RADIUS secret} --username {UserName} --password {base32-encoded TOTP shared secret} --totp
